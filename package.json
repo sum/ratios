@@ -29,7 +29,6 @@
   "devDependencies": {
     "brfs": "^1.2.0",
     "browserify": "^5.9.3",
-    "insert-css": "^0.2.0",
     "watchify": "^1.0.2"
   },
   "dependencies": {}

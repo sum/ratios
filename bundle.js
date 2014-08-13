@@ -1,6 +1,5 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/krjoseph/Documents/work/sum/ratios/index.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (Buffer){
-var insertCSS = require('insert-css')
 var css = Buffer("OnJvb3QgewogIC0tcGhpOiAxLjYxODAzMzk4ODc1OwogIC0tZ29sZGVuOiB2YXIoLS1waGkpOwogIC0tZG91YmxlLW9jdGF2ZTogNDsKICAtLW1ham9yLXR3ZWxmdGg6IDM7CiAgLS1tYWpvci1lbGV2ZW50aDogMi42NjY2NjY2Njc7CiAgLS1tYWpvci10ZW50aDogMi41OwogIC0tb2N0YXZlOiAyOwogIC0tbWFqb3Itc2V2ZW50aDogMS44NzU7CiAgLS1taW5vci1zZXZlbnRoOiAxLjc3Nzc3Nzc3ODsKICAtLW1ham9yLXNpeHRoOiAxLjY2NjY2NjY2NzsKICAtLW1pbm9yLXNpeHRoOiAxLjY7CiAgLS1maWZ0aDogMS41OwogIC0tYXVnbWVudGVkLWZvdXJ0aDogMS40MTQyMTsKICAtLWZvdXJ0aDogMS4zMzMzMzMzMzM7CiAgLS1tYWpvci10aGlyZDogMS4yNTsKICAtLW1pbm9yLXRoaXJkOiAxLjI7CiAgLS1tYWpvci1zZWNvbmQ6IDEuMTI1OwogIC0tbWlub3Itc2Vjb25kOiAxLjA2NjY2NjY2NzsKfQo=","base64")
 
 module.exports = function() {
@@ -9,15 +8,11 @@ module.exports = function() {
     return css
   }
 
-  function insertCSS() {
-    insertCSS(css)
-  }
-
 }
 
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":"/Users/krjoseph/Documents/work/sum/ratios/node_modules/browserify/node_modules/buffer/index.js","insert-css":"/Users/krjoseph/Documents/work/sum/ratios/node_modules/insert-css/index.js"}],"/Users/krjoseph/Documents/work/sum/ratios/node_modules/browserify/node_modules/buffer/index.js":[function(require,module,exports){
+},{"buffer":2}],2:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -1188,7 +1183,7 @@ function assert (test, message) {
   if (!test) throw new Error(message || 'Failed assertion')
 }
 
-},{"base64-js":"/Users/krjoseph/Documents/work/sum/ratios/node_modules/browserify/node_modules/buffer/node_modules/base64-js/lib/b64.js","ieee754":"/Users/krjoseph/Documents/work/sum/ratios/node_modules/browserify/node_modules/buffer/node_modules/ieee754/index.js"}],"/Users/krjoseph/Documents/work/sum/ratios/node_modules/browserify/node_modules/buffer/node_modules/base64-js/lib/b64.js":[function(require,module,exports){
+},{"base64-js":3,"ieee754":4}],3:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -1310,7 +1305,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-},{}],"/Users/krjoseph/Documents/work/sum/ratios/node_modules/browserify/node_modules/buffer/node_modules/ieee754/index.js":[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 exports.read = function(buffer, offset, isLE, mLen, nBytes) {
   var e, m,
       eLen = nBytes * 8 - mLen - 1,
@@ -1396,28 +1391,4 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128;
 };
 
-},{}],"/Users/krjoseph/Documents/work/sum/ratios/node_modules/insert-css/index.js":[function(require,module,exports){
-var inserted = {};
-
-module.exports = function (css, options) {
-    if (inserted[css]) return;
-    inserted[css] = true;
-    
-    var elem = document.createElement('style');
-    elem.setAttribute('type', 'text/css');
-
-    if ('textContent' in elem) {
-      elem.textContent = css;
-    } else {
-      elem.styleSheet.cssText = css;
-    }
-    
-    var head = document.getElementsByTagName('head')[0];
-    if (options && options.prepend) {
-        head.insertBefore(elem, head.childNodes[0]);
-    } else {
-        head.appendChild(elem);
-    }
-};
-
-},{}]},{},["/Users/krjoseph/Documents/work/sum/ratios/index.js"]);
+},{}]},{},[1]);
