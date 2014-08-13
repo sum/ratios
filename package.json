@@ -2,11 +2,11 @@
   "name": "sum-ratios",
   "version": "1.1.0",
   "description": "Ratios for use in a modular scale system",
-  "main": "index.js",
+  "main": "ratios.css",
   "style": "ratios.css",
   "scripts": {
     "test": "test",
-    "js": "browserify -t brfs index.js > bundle.js"
+    "js": "browserify index.js > bundle.js"
   },
   "repository": {
     "type": "git",
