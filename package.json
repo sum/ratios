@@ -2,11 +2,12 @@
   "name": "sum-ratios",
   "version": "1.2.0",
   "description": "Ratios for use in a modular scale system",
-  "main": "ratios.css",
+  "main": "bundle.js",
   "style": "ratios.css",
   "scripts": {
     "test": "test",
-    "js": "browserify index.js > bundle.js"
+    "js": "browserify -t brfs index.js > bundle.js",
+    "watch": "watchify -t brfs index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -28,11 +29,8 @@
   "devDependencies": {
     "brfs": "^1.2.0",
     "browserify": "^5.9.3",
-    "browserify-fs": "^1.0.0",
-    "insert-css": "^0.2.0"
+    "insert-css": "^0.2.0",
+    "watchify": "^1.0.2"
   },
-  "dependencies": {
-    "resumer": "0.0.0",
-    "through": "^2.3.4"
-  }
+  "dependencies": {}
 }

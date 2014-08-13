@@ -1,11 +1,16 @@
-var fs = require('browserify-fs')
-var file
+var fs = require('fs')
 var insertCSS = require('insert-css')
-fs.readFile('/ratios.css', 'utf-8', function(err, data) {
-    console.log(data)
-})
+var css = fs.readFileSync(__dirname + '/ratios.css')
 
 module.exports = function() {
-  return file;
+
+  function getCSS() {
+    return css
+  }
+
+  function insertCSS() {
+    insertCSS(css)
+  }
+
 }
 
