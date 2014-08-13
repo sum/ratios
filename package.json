@@ -1,0 +1,38 @@
+{
+  "name": "sum-ratios",
+  "version": "0.0.0",
+  "description": "Ratios for use in a modular scale system",
+  "main": "index.js",
+  "style": "ratios.css",
+  "scripts": {
+    "test": "test",
+    "js": "browserify -t brfs index.js > bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sum/ratios.git"
+  },
+  "keywords": [
+    "css",
+    "scale",
+    "ratios",
+    "modular",
+    "sum"
+  ],
+  "author": "@dam",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/sum/ratios/issues"
+  },
+  "homepage": "https://github.com/sum/ratios",
+  "devDependencies": {
+    "brfs": "^1.2.0",
+    "browserify": "^5.9.3",
+    "browserify-fs": "^1.0.0",
+    "insert-css": "^0.2.0"
+  },
+  "dependencies": {
+    "resumer": "0.0.0",
+    "through": "^2.3.4"
+  }
+}
